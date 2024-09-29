@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white; 
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Header-right {
+    display: flex;
+    gap: 20px; 
+}
+
+.Header-right a {
+    text-decoration: none; 
+    color: white; 
+    font-size: 18px; 
+}
+
+.Header-right p {
+    margin: 0;
+    cursor: pointer; 
+}
+.active {
+    font-weight: bold; 
+    border-bottom: 2px solid white; 
+}
