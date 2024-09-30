@@ -1,21 +1,37 @@
 import express from "express";
-import {getUsers, createUsers, deleteUser, updateUser, getUser} from "../controllers/users.js"; // Make sure you import getUser
 
 const router = express.Router();
 
-// Get all users
-router.get("/users", getUsers);
+// Sample users data (you can later replace this with a database call)
+let users = [
+  { id: 1, name: "John Doe", email: "johndoe@gmail.com", contact: "123456789" },
+  { id: 2, name: "James Bond", email: "jamesbond@gmail.com", contact: "987654321" }
+];
 
-// Create a new user
-router.post("/user", createUsers);
+// GET request to return all users
+router.get("/users", (req, res) => {
+  res.json(users);
+});
 
-// Get a single user by ID
-router.get("/user/:id", getUser); // This route should use getUser, not getUsers
+// POST request to add a new user
+router.post("/users", (req, res) => {
+  const newUser = {
+    id: users.length + 1, // Simple way to generate a new user ID
+    ...req.body           // Spread the body of the request into the new user object
+  };
+  
+  users.push(newUser);    // Add the new user to the users array
+  res.status(201).json(newUser); // Respond with the new user and a 201 status
+});
 
-// Delete a user by ID
-router.delete("/user/:id", deleteUser);
+// DELETE request to remove a user by ID
+router.delete("/users/:id", (req, res) => {
+  const { id } = req.params;  // Get the ID from the URL parameters
+  users = users.filter(user => user.id !== parseInt(id)); // Filter out the user with the matching ID
+  
+  res.status(200).json({ message: "User deleted successfully" }); // Respond with success message
+});
 
-// Update a user by ID
-router.put("/user/:id", updateUser);
+export default router; // Export the router to use in the main app
 
-export default router;
+

@@ -2,31 +2,32 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    color: white; 
+    padding: 15px 40px; /* Increase padding for better spacing */
+    background-color: #282c34; /* Dark background color */
+    color: white; /* White text color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 26px; /* Slightly increase the font size */
     font-weight: bold;
+    text-transform: uppercase; /* Make the logo text all uppercase */
+    color: #61dafb; /* Use a primary color like React's blue */
 }
 
 .Header-right {
     display: flex;
-    gap: 20px; 
+    gap: 30px; /* Increase gap between links */
 }
 
 .Header-right a {
-    text-decoration: none; 
-    color: white; 
-    font-size: 18px; 
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for hover effects */
 }
 
-.Header-right p {
-    margin: 0;
-    cursor: pointer; 
+.Header-right a:hover {
+    color: #61dafb; /* Hover color change to match the logo color */
 }
-.active {
-    font-weight: bold; 
-    border-bottom: 2px solid white; 
-}
+    

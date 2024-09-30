@@ -1,21 +1,43 @@
-/* Home.css */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Soft background color */
 }
 
 h2 {
-    color: #008080;
+    color: #008080; /* Teal color */
     text-align: center;
+    font-size: 2.5em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+    max-width: 800px; /* Center and limit width */
+    margin: 20px auto;
+    background: blue;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 li {
     margin: 10px 0;
+    padding: 10px;
+    font-size: 1.2em;
     color: #555;
+    background-color: #fafafa;
+    border-left: 5px solid #008080; /* Stylish border */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+li:hover {
+    background-color: #e0f7fa; /* Change background on hover */
+    cursor: pointer;
 }
